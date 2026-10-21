@@ -1,12 +1,14 @@
 package com.chiayi.springbootmall.model;
 
+import com.chiayi.springbootmall.constant.ProcductCategory;
+
 import java.util.Date;
 
 public class Product {
 
     private Integer productId;
     private String productName;
-    private String category;
+    private ProcductCategory category;
     private String imageUrl;
     private Integer price;
     private Integer stock;
@@ -30,11 +32,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public String getCategory() {
+    public ProcductCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(ProcductCategory category) {
         this.category = category;
     }
 
