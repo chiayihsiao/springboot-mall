@@ -49,7 +49,12 @@ public class ProductController {
         productService.updateProduct(productId,productRequest);
             Product updatedProduct = productService.getProductById(productId);
             return ResponseEntity.status(HttpStatus.OK).body(updatedProduct);
-
-
     }
+
+      @DeleteMapping("/products/{productId}")
+      public ResponseEntity<?> deleteProduct(@PathVariable Integer productId) {
+            productService.deleteProductById(productId);
+                return ResponseEntity.status(HttpStatus.NO_CONTENT).build();//204
+
+      }
 }
