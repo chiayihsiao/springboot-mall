@@ -1,6 +1,6 @@
 package com.chiayi.springbootmall.rowmapper;
 
-import com.chiayi.springbootmall.constant.ProcductCategory;
+import com.chiayi.springbootmall.constant.ProductCategory;
 import com.chiayi.springbootmall.model.Product;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -21,7 +21,7 @@ public class ProductRowMapper implements RowMapper<Product> {
         ProcductCategory category = ProcductCategory.valueOf(categoryStr);
         product.setCategory(category);
         */
-        product.setCategory(ProcductCategory.valueOf(resultSet.getString("category")));
+        product.setCategory(ProductCategory.valueOf(resultSet.getString("category")));
 
         product.setImageUrl(resultSet.getString("image_Url"));
         product.setPrice(resultSet.getInt("price"));

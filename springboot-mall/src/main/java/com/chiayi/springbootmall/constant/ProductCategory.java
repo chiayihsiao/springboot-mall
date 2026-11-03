@@ -1,6 +1,6 @@
 package com.chiayi.springbootmall.constant;
 
-public enum ProcductCategory {
+public enum ProductCategory {
     FOOD,
     CAR,
     BOOK

@@ -1,6 +1,6 @@
 package com.chiayi.springbootmall.dto;
 
-import com.chiayi.springbootmall.constant.ProcductCategory;
+import com.chiayi.springbootmall.constant.ProductCategory;
 
 import javax.validation.constraints.NotNull;
 
@@ -11,7 +11,7 @@ public class ProductRequest {
     @NotNull
     private String productName;
     @NotNull
-    private ProcductCategory category;
+    private ProductCategory category;
     @NotNull
     private String imageUrl;
     @NotNull
@@ -20,11 +20,11 @@ public class ProductRequest {
     private Integer stock;
     private String description;
 
-    public ProcductCategory getCategory() {
+    public ProductCategory getCategory() {
         return category;
     }
 
-    public void setCategory(ProcductCategory category) {
+    public void setCategory(ProductCategory category) {
         this.category = category;
     }
 
