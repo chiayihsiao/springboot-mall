@@ -1,5 +1,6 @@
 package com.chiayi.springbootmall.dto;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 public class UserRegisterRequest {
@@ -7,6 +8,7 @@ public class UserRegisterRequest {
 
 
     @NotBlank
+    @Email //Emaill檢核註解
     private String email;
 
     @NotBlank

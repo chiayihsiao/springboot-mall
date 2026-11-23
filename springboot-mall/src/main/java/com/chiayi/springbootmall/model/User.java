@@ -1,12 +1,20 @@
 package com.chiayi.springbootmall.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 
 public class User {
 
     private Integer userId;
+
+    //@JsonProperty("e_mail")
     private String email;
+
+    @JsonIgnore// Spring Boot 在轉換這個 User object 為 json 格式的時候，那就會去忽略這個 password 的變數，那所以就不會將 password 的值去回傳給前端了
     private String password;
+
     private Date createdDate;
     private Date lastModifiedDate;
 
