@@ -1,5 +1,6 @@
 package com.chiayi.springbootmall.controller;
 
+import com.chiayi.springbootmall.dao.UserLoginRequest;
 import com.chiayi.springbootmall.dto.UserRegisterRequest;
 import com.chiayi.springbootmall.model.User;
 import com.chiayi.springbootmall.service.UserService;
@@ -18,7 +19,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
+    //註冊新帳號
     @PostMapping("/users/register")
     public ResponseEntity<User> register(@RequestBody @Valid UserRegisterRequest userRegisterRequest) {
         Integer userId = userService.register(userRegisterRequest);
@@ -26,6 +27,15 @@ public class UserController {
         User user = userService.getUserById(userId);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
+
+    }
+
+    //登入
+    @PostMapping("/users/login")
+    public ResponseEntity<User> login(@RequestBody @Valid UserLoginRequest userLoginRequest) {
+        User user = userService.login(userLoginRequest);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
+
 
     }
 
